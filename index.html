@@ -269,7 +269,7 @@
     </div>
     <!-- Cal inline embed code begins -->
     <div class="cal-embed-container">
-      <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline"></div>
+      <div style="width:100%;height:700px;overflow:hidden" id="my-cal-inline"></div>
     </div>
     <!-- Cal inline embed code ends -->
   </div>
@@ -427,8 +427,6 @@
     });
 
     Cal.ns["30min"]("ui", {
-      "hideEventTypeDetails": false,
-      "layout": "month_view",
       "styles": {
         "branding": {
           "brandColor": "#E8B4B8",
@@ -543,6 +541,37 @@
   <!-- Added script to update copyright year dynamically -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Add mobile nav menu collapse functionality and fix scroll offset
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .footer-links a, .price-button');
+      const navbarCollapse = document.querySelector('.navbar-collapse');
+      const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          // Handle mobile menu collapse
+          if (navbarCollapse.classList.contains('show')) {
+            bsCollapse.hide();
+          }
+          
+          // Handle smooth scroll with offset
+          const href = link.getAttribute('href');
+          if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetElement = document.querySelector(href);
+            if (targetElement) {
+              const navbarHeight = document.querySelector('.navbar').offsetHeight;
+              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>

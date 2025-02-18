@@ -6,12 +6,14 @@
   max-width: 1200px;
   overflow: hidden;
   height: 700px;
+  position: relative;
+  padding-bottom: 50px;
 }
 
-/* Hide Cal.com branding */
 .cal-embed-container iframe {
   height: calc(100% + 50px) !important;
   margin-bottom: -50px;
+  border: none;
 }
 
 [data-cal-link] iframe {
@@ -26,6 +28,11 @@
 #my-cal-inline {
   height: 100% !important;
   min-height: 700px;
+}
+
+/* Hide any Cal.com branding elements */
+.cal-embed-container [data-cal-link] {
+  display: none !important;
 }
 
 /* Calendar Loading and Error States */
