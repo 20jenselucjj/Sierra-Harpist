@@ -1,0 +1,58 @@
+/* Cal.com Integration Styling */
+.cal-embed-container {
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin: 2rem auto;
+  max-width: 1200px;
+  overflow: hidden;
+  height: 700px;
+}
+
+/* Hide Cal.com branding */
+.cal-embed-container iframe {
+  height: calc(100% + 50px) !important;
+  margin-bottom: -50px;
+}
+
+[data-cal-link] iframe {
+  height: calc(100% + 50px) !important;
+  margin-bottom: -50px;
+}
+
+.calendar-popup iframe {
+  margin-bottom: -50px !important;
+}
+
+#my-cal-inline {
+  height: 100% !important;
+  min-height: 700px;
+}
+
+/* Calendar Loading and Error States */
+#calendar-loader {
+  padding: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+#calendar-error {
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: rgba(255, 243, 205, 0.9);
+  border-color: #ffeeba;
+}
+
+/* Cal.com specific styles */
+.cal-link-container {
+  position: relative;
+  background: var(--soft-white);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.cal-branding {
+  --cal-brand: var(--primary-brand) !important;
+  --cal-brand-emphasis: var(--accent-gold) !important;
+}

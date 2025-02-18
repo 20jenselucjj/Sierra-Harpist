@@ -1,0 +1,116 @@
+/* Gallery & Testimonials */
+.gallery-section {
+    padding: 4rem 0;
+    background: var(--soft-white);
+}
+
+.gallery-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-image:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-image:hover .gallery-caption {
+    opacity: 1;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 4rem 0;
+    background: linear-gradient(to right, 
+        rgba(232, 180, 184, 0.05), 
+        rgba(212, 175, 55, 0.05)
+    );
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    position: relative;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--light-pink);
+}
+
+.testimonial-card::before {
+    content: "";
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    color: var(--pale-gold);
+    position: absolute;
+    top: -1.5rem;
+    left: 1rem;
+    opacity: 0.3;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    color: var(--primary-brand);
+    font-family: 'Playfair Display', serif;
+    margin-top: 1rem;
+    font-weight: 600;
+    background: linear-gradient(
+        90deg,
+        var(--primary-brand) 0%,
+        var(--accent-gold) 50%,
+        var(--primary-brand) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 6s infinite;
+    animation-timing-function: linear;
+}
+
+.testimonial-event {
+    color: var(--text-dark);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}

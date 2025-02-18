@@ -7,7 +7,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Base styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css">
+  
+  <!-- Component styles -->
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/pricing.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/calendar.css">
+  <link rel="stylesheet" href="css/footer.css">
+  
+  <!-- Utilities -->
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- Third-party -->
   <link rel="stylesheet" href="https://app.cal.com/embed.css">
   <meta name="cal-verification-token" content="your-verification-token">
   <link rel="preconnect" href="https://app.cal.com">
@@ -42,13 +59,15 @@
     </div>
   </nav>
   <!-- Hero Section -->
-  <div class="container mt-5 hero-text" id="home">
-    <h1>Create Timeless Moments with Harp Music</h1>
-    <p>Professional harp performances for weddings, events, and special occasions in Southern Utah</p>
-    <a href="#services" class="cta-button">View Packages</a>
+  <div class="hero-section" id="home">
+    <div class="container hero-text">
+      <h1>Create Timeless Moments with Harp Music</h1>
+      <p>Professional harp performances for weddings, events, and special occasions in Southern Utah</p>
+    </div>
   </div>
+
   <!-- Services Section -->
-  <section class="container-fluid" id="services">
+  <section class="container-fluid bg-white" id="services">
     <div class="container">
       <h2 class="text-center pricing-title">Packages</h2>
       <div class="row justify-content-center">
@@ -180,6 +199,34 @@
       </div>
     </div>
   </div>
+  
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2 class="text-center mb-5">Performance Gallery</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="gallery-image">
+            <img src="Closeupwithharp.png" alt="Close-up detail of harp performance" loading="lazy">
+            <div class="gallery-caption">Intricate details of harp musicianship</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="gallery-image">
+            <img src="Portraitwithharpsmilling.png" alt="Friendly portrait with harp" loading="lazy">
+            <div class="gallery-caption">Creating warm moments through music</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="gallery-image">
+            <img src="Portraitwithharp.png" alt="Professional portrait with harp" loading="lazy">
+            <div class="gallery-caption">Professional harp performance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Reviews Section -->
   <section class="testimonials" id="testimonials">
     <div class="container">
@@ -225,25 +272,6 @@
       <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline"></div>
     </div>
     <!-- Cal inline embed code ends -->
-  </div>
-  <!-- Updated Gallery Section with high-resolution images and fade-in class for micro-interactions -->
-  <div class="container my-5">
-    <div class="row">
-      <div class="col-md-6 mb-3">
-        <a href="#" class="image-placeholder fade-in" data-img="https://via.placeholder.com/1280x720.webp?text=Action+Shot+of+Sierra+Performing" data-caption="Action Shot: Sierra Performing Live" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <div class="ratio ratio-16x9 bg-secondary d-flex align-items-center justify-content-center">
-            <span class="text-white">Action Shot: Sierra Performing Live</span>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 mb-3">
-        <a href="#" class="image-placeholder fade-in" data-img="https://via.placeholder.com/1280x720.webp?text=Atmospheric+Wedding+Venue" data-caption="Atmospheric Wedding Venue" data-bs-toggle="modal" data-bs-target="#lightboxModal">
-          <div class="ratio ratio-16x9 bg-secondary d-flex align-items-center justify-content-center">
-            <span class="text-white">Atmospheric Wedding Venue</span>
-          </div>
-        </a>
-      </div>
-    </div>
   </div>
   <!-- Updated Contact Form Section -->
   <div class="container my-5" id="contact">
@@ -391,7 +419,9 @@
             "brandColor": "#E8B4B8",
             "lightBrand": "#D4AF37"
           }
-        }
+        },
+        "hideEventTypeDetails": false,
+        "hideBranding": true
       },
       calLink: "lucas-jensen-rlhgc8/30min"
     });

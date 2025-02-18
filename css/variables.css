@@ -1,0 +1,20 @@
+:root {
+  --primary-brand: #E8B4B8;    /* Soft pink */
+  --accent-gold: #D4AF37;      /* Warm gold */
+  --soft-white: #FFF9F9;       /* Warm white background */
+  --deep-pink: #C88185;        /* Darker pink for contrast */
+  --text-dark: #4A4A4A;        /* Softer text color */
+  --light-pink: #F5D6D8;       /* Light pink for hover states */
+  --pale-gold: #F0E6C3;        /* Pale gold for accents */
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.8;
+  color: var(--text-dark);
+  background: var(--soft-white);
+}
+
+html {
+  scroll-behavior: smooth;
+}

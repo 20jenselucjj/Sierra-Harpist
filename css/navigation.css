@@ -1,0 +1,41 @@
+/* Navigation Styles */
+.navbar {
+  background-color: var(--primary-brand);
+  box-shadow: 0 2px 8px rgba(232, 180, 184, 0.2);
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: var(--accent-gold);
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--accent-gold);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
