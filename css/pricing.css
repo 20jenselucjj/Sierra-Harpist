@@ -2,7 +2,7 @@
 .pricing-card {
   background: white;
   border-radius: 20px;
-  border: 2px solid transparent;
+  border: 2px solid var(--light-pink);
   padding: 2rem;
   height: 100%;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -25,7 +25,7 @@
 .pricing-card:hover {
   border-color: var(--accent-gold);
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(232, 180, 184, 0.15);
+  box-shadow: 0 20px 40px rgba(232, 180, 184, 0.2);
 }
 
 .pricing-card:hover::before {

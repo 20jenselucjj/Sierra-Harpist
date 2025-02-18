@@ -1,6 +1,7 @@
 /* Cal.com Integration Styling */
 .cal-embed-container {
   border-radius: 12px;
+  border: 2px solid var(--light-pink);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   margin: 2rem auto;
   max-width: 1200px;
@@ -8,6 +9,12 @@
   height: 700px;
   position: relative;
   padding-bottom: 50px;
+  transition: all 0.3s ease;
+}
+
+.cal-embed-container:hover {
+  border-color: var(--accent-gold);
+  box-shadow: 0 12px 32px rgba(232, 180, 184, 0.15);
 }
 
 .cal-embed-container iframe {
