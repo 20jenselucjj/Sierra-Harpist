@@ -69,6 +69,12 @@
   font-weight: bold;
 }
 
+.pricing-footer {
+  text-align: center;
+  padding: 0 10px;
+  width: 100%;
+}
+
 .price-button {
   display: inline-block;
   padding: 1rem 2rem;
@@ -80,6 +86,26 @@
   transition: all 0.3s ease;
   background: transparent;
   width: 100%;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .price-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .price-button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+    min-width: 140px;
+  }
 }
 
 .price-button:hover {

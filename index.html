@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/calendar.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/songs.css">
   
   <!-- Utilities -->
   <link rel="stylesheet" href="css/responsive.css">
@@ -44,6 +45,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#services">Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#songs">Song Selection</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#testimonials">Reviews</a>
@@ -227,6 +231,163 @@
     </div>
   </section>
 
+  <!-- Song Selection Section -->
+  <section class="song-section" id="songs">
+    <div class="container">
+      <h2 class="text-center mb-5">Song Selection</h2>
+
+      <div class="song-filter text-center">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-outline-primary active" data-category="all">All</button>
+          <button type="button" class="btn btn-outline-primary" data-category="classical">Classical</button>
+          <button type="button" class="btn btn-outline-primary" data-category="wedding">Wedding</button>
+          <button type="button" class="btn btn-outline-primary" data-category="modern">Modern</button>
+          <button type="button" class="btn btn-outline-primary" data-category="religious">Religious</button>
+        </div>
+      </div>
+
+      <div class="song-categories-wrapper">
+        <!-- All songs view -->
+        <div class="song-category-all" data-category="all">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="song-category">
+                <h3>Classical Repertoire</h3>
+                <ul class="song-list">
+                  <li>Canon in D - Pachelbel</li>
+                  <li>Air on G String - Bach</li>
+                  <li>Claire de Lune - Debussy</li>
+                  <li>Ave Maria - Schubert</li>
+                  <li>Spring - Vivaldi</li>
+                  <li>Moonlight Sonata - Beethoven</li>
+                  <li>Gymnopédie No. 1 - Erik Satie</li>
+                  <li>Für Elise - Beethoven</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="song-category">
+                <h3>Wedding Favorites</h3>
+                <ul class="song-list">
+                  <li>A Thousand Years - Christina Perri</li>
+                  <li>Can't Help Falling in Love - Elvis Presley</li>
+                  <li>Perfect - Ed Sheeran</li>
+                  <li>All of Me - John Legend</li>
+                  <li>The Wedding March - Mendelssohn</li>
+                  <li>Bridal Chorus - Wagner</li>
+                  <li>Tale As Old As Time - Beauty and the Beast</li>
+                  <li>Marry Me - Train</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <div class="song-category">
+                <h3>Modern & Contemporary</h3>
+                <ul class="song-list">
+                  <li>Let It Be - The Beatles</li>
+                  <li>Your Song - Elton John</li>
+                  <li>Hallelujah - Leonard Cohen</li>
+                  <li>The Sound of Silence - Simon & Garfunkel</li>
+                  <li>Yesterday - The Beatles</li>
+                  <li>Bridge Over Troubled Water - Simon & Garfunkel</li>
+                  <li>Stairway to Heaven - Led Zeppelin</li>
+                  <li>River Flows in You - Yiruma</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="song-category">
+                <h3>Religious & Sacred</h3>
+                <ul class="song-list">
+                  <li>Amazing Grace</li>
+                  <li>How Great Thou Art</li>
+                  <li>Be Thou My Vision</li>
+                  <li>The Lord's Prayer</li>
+                  <li>Morning Has Broken</li>
+                  <li>Simple Gifts</li>
+                  <li>Jesu, Joy of Man's Desiring - Bach</li>
+                  <li>On Eagle's Wings</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Individual category views -->
+        <div class="song-category-single" data-category="classical" style="display: none;">
+          <div class="song-category">
+            <h3>Classical Repertoire</h3>
+            <ul class="song-list">
+              <li>Canon in D - Pachelbel</li>
+              <li>Air on G String - Bach</li>
+              <li>Claire de Lune - Debussy</li>
+              <li>Ave Maria - Schubert</li>
+              <li>Spring - Vivaldi</li>
+              <li>Moonlight Sonata - Beethoven</li>
+              <li>Gymnopédie No. 1 - Erik Satie</li>
+              <li>Für Elise - Beethoven</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="song-category-single" data-category="wedding" style="display: none;">
+          <div class="song-category">
+            <h3>Wedding Favorites</h3>
+            <ul class="song-list">
+              <li>A Thousand Years - Christina Perri</li>
+              <li>Can't Help Falling in Love - Elvis Presley</li>
+              <li>Perfect - Ed Sheeran</li>
+              <li>All of Me - John Legend</li>
+              <li>The Wedding March - Mendelssohn</li>
+              <li>Bridal Chorus - Wagner</li>
+              <li>Tale As Old As Time - Beauty and the Beast</li>
+              <li>Marry Me - Train</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="song-category-single" data-category="modern" style="display: none;">
+          <div class="song-category">
+            <h3>Modern & Contemporary</h3>
+            <ul class="song-list">
+              <li>Let It Be - The Beatles</li>
+              <li>Your Song - Elton John</li>
+              <li>Hallelujah - Leonard Cohen</li>
+              <li>The Sound of Silence - Simon & Garfunkel</li>
+              <li>Yesterday - The Beatles</li>
+              <li>Bridge Over Troubled Water - Simon & Garfunkel</li>
+              <li>Stairway to Heaven - Led Zeppelin</li>
+              <li>River Flows in You - Yiruma</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="song-category-single" data-category="religious" style="display: none;">
+          <div class="song-category">
+            <h3>Religious & Sacred</h3>
+            <ul class="song-list">
+              <li>Amazing Grace</li>
+              <li>How Great Thou Art</li>
+              <li>Be Thou My Vision</li>
+              <li>The Lord's Prayer</li>
+              <li>Morning Has Broken</li>
+              <li>Simple Gifts</li>
+              <li>Jesu, Joy of Man's Desiring - Bach</li>
+              <li>On Eagle's Wings</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <p class="text-muted">Don't see what you're looking for? I'm happy to learn special requests with advance notice.</p>
+        <a href="#contact" class="btn btn-outline-primary">Request a Song</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Reviews Section -->
   <section class="testimonials" id="testimonials">
     <div class="container">
@@ -348,10 +509,11 @@
           <h5>Quick Access</h5>
           <ul class="list-unstyled footer-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#services">View Packages</a></li>
-            <li><a href="#testimonials">Client Reviews</a></li>
+            <li><a href="#services">Packages</a></li>
+            <li><a href="#songs">Song Selection</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
             <li><a href="#booking">Book Now</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         <div class="col-md-4 mb-4 mb-md-0">
@@ -501,9 +663,52 @@
         });
       });
     });
-  </script>
-  <!-- Lightbox Script -->
-  <script>
+
+    // Song filtering functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const songSearch = document.getElementById('songSearch');
+      const filterButtons = document.querySelectorAll('.song-filter button');
+      const allCategories = document.querySelector('.song-category-all');
+      const singleCategories = document.querySelectorAll('.song-category-single');
+      
+      // Category filtering
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const category = this.getAttribute('data-category');
+          
+          // Update active button state
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+
+          if (category === 'all') {
+            allCategories.style.display = '';
+            singleCategories.forEach(cat => cat.style.display = 'none');
+          } else {
+            allCategories.style.display = 'none';
+            singleCategories.forEach(cat => {
+              if (cat.getAttribute('data-category') === category) {
+                cat.style.display = '';
+              } else {
+                cat.style.display = 'none';
+              }
+            });
+          }
+        });
+      });
+
+      // Search functionality
+      songSearch.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase();
+        const songItems = document.querySelectorAll('.song-list li');
+        
+        songItems.forEach(item => {
+          const text = item.textContent.toLowerCase();
+          item.style.display = text.includes(searchTerm) ? '' : 'none';
+        });
+      });
+    });
+
+    // Lightbox Script
     document.querySelectorAll('.image-placeholder').forEach(function(el) {
       el.addEventListener('click', function(e) {
         const imgSrc = el.getAttribute('data-img');
@@ -512,9 +717,8 @@
         document.getElementById('lightbox-caption').textContent = caption;
       });
     });
-  </script>
-  <!-- Added form validation and submission handling script -->
-  <script>
+
+    // Added form validation and submission handling script
     (function () {
       'use strict';
       var form = document.querySelector('.contact-form');
@@ -537,14 +741,13 @@
         form.classList.add('was-validated');
       }, false);
     })();
-  </script>
-  <!-- Added script to update copyright year dynamically -->
-  <script>
+
+    // Added script to update copyright year dynamically
     document.getElementById('year').textContent = new Date().getFullYear();
     
     // Add mobile nav menu collapse functionality and fix scroll offset
     document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .footer-links a, .price-button');
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .footer-links a, .price-button, .btn-outline-primary[href="#contact"]');
       const navbarCollapse = document.querySelector('.navbar-collapse');
       const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
       
@@ -562,7 +765,8 @@
             const targetElement = document.querySelector(href);
             if (targetElement) {
               const navbarHeight = document.querySelector('.navbar').offsetHeight;
-              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+              const extraOffset = 20; // Additional offset for better positioning
+              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight - extraOffset;
               window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
