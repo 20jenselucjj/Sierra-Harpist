@@ -39,3 +39,36 @@
 .navbar-nav .nav-link.active::after {
   width: 100%;
 }
+
+/* Mobile Navigation Styles */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: var(--primary-brand);
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+  }
+
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .navbar-nav {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link::after {
+    bottom: 5px;
+  }
+}

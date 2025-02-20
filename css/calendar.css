@@ -70,3 +70,37 @@
   --cal-brand: var(--primary-brand) !important;
   --cal-brand-emphasis: var(--accent-gold) !important;
 }
+
+/* Mobile Responsive Calendar */
+@media (max-width: 768px) {
+    .cal-embed-container {
+        height: 600px;
+        margin: 1rem;
+        border-width: 1px;
+    }
+
+    #my-cal-inline {
+        min-height: 600px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cal-embed-container {
+        height: 500px;
+        margin: 0.5rem;
+    }
+
+    #my-cal-inline {
+        min-height: 500px;
+    }
+
+    #calendar-loader {
+        padding: 1rem;
+    }
+
+    #calendar-error {
+        margin: 1rem;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}

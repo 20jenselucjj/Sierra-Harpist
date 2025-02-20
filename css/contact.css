@@ -186,3 +186,45 @@
         transform: translateY(0);
     }
 }
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .contact-form .form-control,
+    .contact-form .form-select {
+        padding: 0.6rem;
+        font-size: 1rem;
+    }
+
+    .contact-form .price-button {
+        width: 100%;
+        min-width: unset;
+    }
+
+    #successModal .modal-body {
+        padding: 3rem 1.5rem 2rem;
+    }
+
+    #successModal .bi-check-circle {
+        font-size: 3.5rem;
+    }
+
+    #successModal p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-form {
+        padding: 1.25rem;
+        margin: 0 0.5rem;
+    }
+
+    #successModal .modal-body {
+        padding: 2.5rem 1rem 1.5rem;
+    }
+}
