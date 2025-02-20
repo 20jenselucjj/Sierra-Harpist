@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport"="width=device-width, initial-scale=1">
   <title>Southern Utah Harpist - Professional Harp Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,10 +53,10 @@
             <a class="nav-link" href="#testimonials">Reviews</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#booking">Book Now</a>
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
+            <a class="nav-link" href="#booking">Calendar</a>
           </li>
         </ul>
       </div>
@@ -111,7 +111,7 @@
               <li>Professional sound setup</li>
             </ul>
             <div class="pricing-footer">
-              <a href="#booking" class="price-button">Schedule Wedding</a>
+              <a href="#booking" class="price-button">Book Wedding</a>
             </div>
           </div>
         </div>
@@ -131,7 +131,7 @@
               <li>Customized repertoire</li>
             </ul>
             <div class="pricing-footer">
-              <a href="#booking" class="price-button">Reserve Time</a>
+              <a href="#booking" class="price-button">Book Event</a>
             </div>
           </div>
         </div>
@@ -440,20 +440,30 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="pricing-card contact-form">
-          <form>
+          <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="031d7316-27c7-4f63-92d5-e47258ac0dd8">
+            <input type="hidden" name="subject" value="New Event Inquiry - Southern Utah Harpist">
+            <input type="hidden" name="from_name" value="Southern Utah Harpist">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
             <div class="mb-3">
               <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" required>
+              <input type="text" class="form-control" id="name" name="name" required>
               <div class="invalid-feedback">Please enter your name.</div>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
+              <input type="email" class="form-control" id="email" name="email" required>
               <div class="invalid-feedback">Please enter a valid email.</div>
             </div>
             <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" name="phone" required>
+              <div class="invalid-feedback">Please enter your phone number.</div>
+            </div>
+            <div class="mb-3">
               <label for="eventType" class="form-label">Event Type</label>
-              <select class="form-select" id="eventType" required>
+              <select class="form-select" id="eventType" name="eventType" required>
                 <option value="">Select an event type...</option>
                 <option value="wedding">Wedding</option>
                 <option value="corporate">Corporate Event</option>
@@ -464,10 +474,15 @@
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" rows="4" required></textarea>
+              <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
               <div class="invalid-feedback">Please enter a message.</div>
             </div>
-            <button type="submit" class="price-button">Send Message</button>
+            <div class="text-center">
+              <button type="submit" class="price-button">
+                <span class="button-text">Send Message</span>
+                <span class="spinner-border spinner-border-sm ms-2" role="status" style="display: none;"></span>
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -484,19 +499,17 @@
       </div>
     </div>
   </div>
-  <!-- Added success modal for form submission -->
+  <!-- Updated success modal for form submission -->
   <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="successModalLabel">Success</h5>
+        <div class="modal-header border-0">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          Your message has been sent successfully!
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        <div class="modal-body text-center py-5">
+          <i class="bi bi-check-circle text-success mb-4" style="font-size: 4rem;"></i>
+          <h4 class="modal-title mb-3" id="successModalLabel">Message Sent!</h4>
+          <p class="mb-0">Thank you for your message. We'll get back to you soon!</p>
         </div>
       </div>
     </div>
@@ -540,242 +553,12 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://app.cal.com/embed.js" async></script>
-  <!-- Cal.com Script -->
-  <script type="text/javascript">
-    (function (C, A, L) { 
-      let p = function (a, ar) { a.q.push(ar); }; 
-      let d = C.document; 
-      C.Cal = C.Cal || function () { 
-        let cal = C.Cal; 
-        let ar = arguments; 
-        if (!cal.loaded) { 
-          cal.ns = {}; 
-          cal.q = cal.q || []; 
-          d.head.appendChild(d.createElement("script")).src = A; 
-          cal.loaded = true; 
-        } 
-        if (ar[0] === L) { 
-          const api = function () { p(api, arguments); }; 
-          const namespace = ar[1]; 
-          api.q = api.q || []; 
-          if(typeof namespace === "string"){
-            cal.ns[namespace] = cal.ns[namespace] || api;
-            p(cal.ns[namespace], ar);
-            p(cal, ["initNamespace", namespace]);
-          } else p(cal, ar); 
-          return;
-        } 
-        p(cal, ar); 
-      }; 
-    })(window, "https://app.cal.com/embed/embed.js", "init");
-
-    Cal("init", "30min", {origin:"https://cal.com"});
-
-    Cal.ns["30min"]("inline", {
-      elementOrSelector:"#my-cal-inline",
-      config: {
-        "layout": "month_view",
-        "theme": "light",
-        "styles": {
-          "branding": {
-            "brandColor": "#E8B4B8",
-            "lightBrand": "#D4AF37"
-          }
-        },
-        "hideEventTypeDetails": false,
-        "hideBranding": true
-      },
-      calLink: "lucas-jensen-rlhgc8/30min"
-    });
-
-    Cal.ns["30min"]("ui", {
-      "styles": {
-        "branding": {
-          "brandColor": "#E8B4B8",
-          "lightBrand": "#D4AF37"
-        }
-      }
-    });
-
-    // Handle errors
-    Cal.ns["30min"]("on", {
-      action: "error",
-      callback: (e) => {
-        console.error('Cal.com Error:', e);
-        document.getElementById('calendar-error').style.display = 'block';
-      }
-    });
-
-    // Pricing Section Interactions
-    document.addEventListener('DOMContentLoaded', function() {
-      // Add fade-in animation to pricing cards
-      const pricingCards = document.querySelectorAll('.pricing-card');
-      const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px'
-      };
-
-      const pricingObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, observerOptions);
-
-      pricingCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-        pricingObserver.observe(card);
-      });
-
-      // Highlight features on hover
-      const featureItems = document.querySelectorAll('.pricing-features li');
-      featureItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-          item.style.transform = 'translateX(10px)';
-          item.style.color = 'var(--primary-brand)';
-        });
-        item.addEventListener('mouseleave', () => {
-          item.style.transform = 'translateX(0)';
-          item.style.color = 'var(--text-dark)';
-        });
-      });
-
-      // Add smooth scroll to booking section when clicking price buttons
-      const priceButtons = document.querySelectorAll('.price-button');
-      priceButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetSection = document.querySelector(button.getAttribute('href'));
-          targetSection.scrollIntoView({ behavior: 'smooth' });
-          
-          // Pre-select the package in the booking form if it exists
-          const packageType = button.textContent.toLowerCase().includes('ceremony') ? 'wedding' :
-                             button.textContent.toLowerCase().includes('full') ? 'fullPackage' :
-                             'custom';
-          const eventTypeSelect = document.getElementById('eventType');
-          if (eventTypeSelect) {
-            eventTypeSelect.value = packageType;
-          }
-        });
-      });
-    });
-
-    // Song filtering functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const songSearch = document.getElementById('songSearch');
-      const filterButtons = document.querySelectorAll('.song-filter button');
-      const allCategories = document.querySelector('.song-category-all');
-      const singleCategories = document.querySelectorAll('.song-category-single');
-      
-      // Category filtering
-      filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const category = this.getAttribute('data-category');
-          
-          // Update active button state
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-
-          if (category === 'all') {
-            allCategories.style.display = '';
-            singleCategories.forEach(cat => cat.style.display = 'none');
-          } else {
-            allCategories.style.display = 'none';
-            singleCategories.forEach(cat => {
-              if (cat.getAttribute('data-category') === category) {
-                cat.style.display = '';
-              } else {
-                cat.style.display = 'none';
-              }
-            });
-          }
-        });
-      });
-
-      // Search functionality
-      songSearch.addEventListener('input', function(e) {
-        const searchTerm = e.target.value.toLowerCase();
-        const songItems = document.querySelectorAll('.song-list li');
-        
-        songItems.forEach(item => {
-          const text = item.textContent.toLowerCase();
-          item.style.display = text.includes(searchTerm) ? '' : 'none';
-        });
-      });
-    });
-
-    // Lightbox Script
-    document.querySelectorAll('.image-placeholder').forEach(function(el) {
-      el.addEventListener('click', function(e) {
-        const imgSrc = el.getAttribute('data-img');
-        const caption = el.getAttribute('data-caption');
-        document.getElementById('lightbox-image').src = imgSrc;
-        document.getElementById('lightbox-caption').textContent = caption;
-      });
-    });
-
-    // Added form validation and submission handling script
-    (function () {
-      'use strict';
-      var form = document.querySelector('.contact-form');
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        if (!form.checkValidity()) {
-          event.stopPropagation();
-        } else {
-          // Log form data to console
-          console.log({
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            eventType: document.getElementById('eventType').value,
-            message: document.getElementById('message').value
-          });
-          // Show success modal
-          var successModalEl = new bootstrap.Modal(document.getElementById('successModal'));
-          successModalEl.show();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    })();
-
-    // Added script to update copyright year dynamically
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Add mobile nav menu collapse functionality and fix scroll offset
-    document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .footer-links a, .price-button, .btn-outline-primary[href="#contact"]');
-      const navbarCollapse = document.querySelector('.navbar-collapse');
-      const bsCollapse = new bootstrap.Collapse(navbarCollapse, {toggle: false});
-      
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          // Handle mobile menu collapse
-          if (navbarCollapse.classList.contains('show')) {
-            bsCollapse.hide();
-          }
-          
-          // Handle smooth scroll with offset
-          const href = link.getAttribute('href');
-          if (href.startsWith('#')) {
-            e.preventDefault();
-            const targetElement = document.querySelector(href);
-            if (targetElement) {
-              const navbarHeight = document.querySelector('.navbar').offsetHeight;
-              const extraOffset = 20; // Additional offset for better positioning
-              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight - extraOffset;
-              window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-              });
-            }
-          }
-        });
-      });
-    });
-  </script>
+  <!-- Modular JavaScript -->
+  <script src="assets/js/cal-init.js"></script>
+  <script src="assets/js/pricing.js"></script>
+  <script src="assets/js/songs.js"></script>
+  <script src="assets/js/gallery.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/navigation.js"></script>
 </body>
 </html>

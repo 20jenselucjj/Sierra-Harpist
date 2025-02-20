@@ -1,33 +1,188 @@
 /* Contact Form Styling */
 .contact-form {
-  background: white;
-  padding: 3rem;
-  border-radius: 20px;
-  border: 2px solid var(--light-pink);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 2px solid var(--light-pink);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-form:hover {
-  border-color: var(--accent-gold);
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(232, 180, 184, 0.15);
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(232, 180, 184, 0.15);
 }
 
-.form-control, .form-select {
-  border: 1px solid var(--light-pink);
-  padding: 0.75rem;
-  border-radius: 10px;
-  transition: all 0.3s ease;
+.contact-form .form-control,
+.contact-form .form-select {
+    border: 1px solid rgba(232, 180, 184, 0.3);
+    padding: 0.75rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-.form-control:focus, .form-select:focus {
-  border-color: var(--accent-gold);
-  box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(232, 180, 184, 0.25);
 }
 
-.form-label {
-  color: var(--primary-brand);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+.contact-form .form-label {
+    color: var(--primary-brand);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Enhanced button styling */
+.contact-form .price-button {
+    position: relative;
+    min-width: 180px;
+    padding: 12px 24px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.contact-form .price-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.contact-form .price-button:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232, 180, 184, 0.2);
+}
+
+.contact-form .spinner-border {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.15em;
+}
+
+/* Form validation states */
+.contact-form .form-control.is-invalid,
+.contact-form .form-select.is-invalid {
+    border-color: #dc3545;
+    background-image: none;
+}
+
+.contact-form .form-control.is-valid,
+.contact-form .form-select.is-valid {
+    border-color: #198754;
+    background-image: none;
+}
+
+.contact-form .invalid-feedback {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    color: #dc3545;
+}
+
+/* Success modal styling */
+#successModal .modal-content {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+#successModal .modal-header {
+    padding: 1rem 1rem 0 1rem;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#successModal .btn-close {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0.75rem;
+    border-radius: 50%;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+#successModal .btn-close:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+#successModal .modal-body {
+    padding: 4rem 2rem 3rem;
+    background: linear-gradient(135deg, rgba(232, 180, 184, 0.1), rgba(212, 175, 55, 0.05));
+}
+
+#successModal .bi-check-circle {
+    color: var(--accent-color);
+    display: block;
+    margin: 0 auto;
+    animation: checkmarkBounce 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#successModal .modal-title {
+    color: var(--primary-brand);
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.4s ease-out 0.2s both;
+}
+
+#successModal p {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    line-height: 1.5;
+    animation: fadeInUp 0.4s ease-out 0.3s both;
+}
+
+#successModal .modal-footer {
+    border: none;
+    padding: 1rem 2rem 2rem;
+}
+
+#successModal .modal-footer .price-button {
+    min-width: 120px;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes checkmarkBounce {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
