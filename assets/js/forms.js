@@ -1,14 +1,6 @@
-import config from './config.js';
-
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.contact-form form');
     if (form) {
-        // Set the access key from config
-        const accessKeyInput = form.querySelector('input[name="access_key"]');
-        if (accessKeyInput) {
-            accessKeyInput.value = config.web3forms.access_key;
-        }
-
         // Initialize success modal with specific options
         const successModalElement = document.getElementById('successModal');
         const successModal = successModalElement ? new bootstrap.Modal(successModalElement, {
