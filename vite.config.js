@@ -9,6 +9,13 @@ export default defineConfig({
       input: {
         main: './index.html'
       }
-    }
+    },
+    assetsDir: 'assets',
+    sourcemap: true,
+    emptyOutDir: true
+  },
+  server: {
+    port: 3000,
+    open: true
   }
 });
