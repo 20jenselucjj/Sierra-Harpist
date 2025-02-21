@@ -1,3 +1,6 @@
+// Environment variables
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.contact-form form');
     if (form) {
@@ -8,6 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
             keyboard: true,
             focus: true
         }) : null;
+
+        // Set the access key from environment variable
+        const accessKeyInput = form.querySelector('input[name="access_key"]');
+        if (accessKeyInput) {
+            accessKeyInput.value = WEB3FORMS_ACCESS_KEY;
+        }
 
         form.addEventListener('submit', async function(event) {
             event.preventDefault();
