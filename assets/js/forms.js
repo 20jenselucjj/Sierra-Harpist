@@ -9,13 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
             accessKeyInput.value = config.web3forms.access_key;
         }
 
-        // Initialize success modal with specific options
+        // Initialize success modal properly
         const successModalElement = document.getElementById('successModal');
-        const successModal = successModalElement ? new bootstrap.Modal(successModalElement, {
-            backdrop: true,
-            keyboard: true,
-            focus: true
-        }) : null;
+        let successModal = null;
+        if (successModalElement) {
+            successModal = new bootstrap.Modal(successModalElement);
+        }
 
         form.addEventListener('submit', async function(event) {
             event.preventDefault();
@@ -55,19 +54,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 const data = await response.json();
                 
                 if (data.success) {
+                    // Reset form first
+                    form.reset();
+                    form.classList.remove('was-validated');
+                    
                     // Show success modal
                     if (successModal) {
                         successModal.show();
                         
-                        // Auto-hide modal after 3 seconds
+                        // Auto-hide modal after 5 seconds
                         setTimeout(() => {
                             successModal.hide();
-                        }, 3000);
+                        }, 5000);
                     }
-                    
-                    // Reset form
-                    form.reset();
-                    form.classList.remove('was-validated');
                 } else {
                     throw new Error(data.message || 'Submission failed');
                 }
