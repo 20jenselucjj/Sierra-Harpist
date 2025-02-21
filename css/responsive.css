@@ -1,7 +1,15 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+
   .hero-text {
-    padding: 3rem 0;
+    padding: 2rem 1rem;
     min-height: 60vh;
     display: flex;
     flex-direction: column;
@@ -9,13 +17,36 @@
   }
 
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 1.2;
   }
   
   .hero-text p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    padding: 0.5rem;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    max-width: 100%;
   }
   
+  .pricing-card {
+    margin: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  .price-amount {
+    font-size: 2rem;
+  }
+
+  .pricing-features li {
+    font-size: 0.95rem;
+  }
+
   .card, .testimonial-card {
     margin-bottom: 2rem;
   }
@@ -56,17 +87,22 @@
 }
 
 @media (max-width: 576px) {
+  html {
+    font-size: 15px;
+  }
+
   .hero-text {
     padding: 2rem 0;
   }
 
   .hero-text h1 {
     font-size: 1.75rem;
+    padding: 0 0.5rem;
   }
 
   .hero-text p {
     font-size: 1rem;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
 
   .cta-button {
@@ -77,6 +113,15 @@
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .pricing-card {
+    margin: 0.25rem;
+    padding: 1.25rem;
   }
 
   #services {

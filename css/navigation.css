@@ -2,6 +2,8 @@
 .navbar {
   background-color: var(--primary-brand);
   box-shadow: 0 2px 8px rgba(232, 180, 184, 0.2);
+  transition: all 0.3s ease;
+  padding: 1rem;
 }
 
 .navbar-brand {
@@ -42,16 +44,24 @@
 
 /* Mobile Navigation Styles */
 @media (max-width: 991px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
   .navbar-collapse {
     background-color: var(--primary-brand);
-    padding: 1rem;
+    padding: 0.75rem;
     border-radius: 0 0 8px 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 90vh;
+    overflow-y: auto;
   }
 
   .navbar-toggler {
     border: none;
     padding: 0.5rem;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .navbar-toggler:focus {
@@ -66,9 +76,15 @@
   .navbar-nav .nav-link {
     padding: 0.75rem 1rem;
     text-align: center;
+    font-size: 1.1rem;
+    touch-action: manipulation;
   }
 
   .navbar-nav .nav-link::after {
     bottom: 5px;
+  }
+
+  .nav-link:active {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
