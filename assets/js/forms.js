@@ -1,5 +1,5 @@
-// Environment variables with fallback
-const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '031d7316-27c7-4f63-92d5-e47258ac0dd8';
+// Environment variables
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.contact-form form');

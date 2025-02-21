@@ -209,20 +209,3 @@ window.retryCalendarLoad = function() {
     };
     document.body.appendChild(script);
 };
-
-// Cal.com initialization and configuration
-window.addEventListener('load', function() {
-    const calUsername = import.meta.env.VITE_CAL_USERNAME;
-    const calEventType = import.meta.env.VITE_CAL_EVENT_TYPE;
-    
-    if (window.Cal) {
-        Cal.init();
-        Cal.inline({
-            elementOrSelector: "#my-cal-inline",
-            calLink: `${calUsername}/${calEventType}`
-        });
-    } else {
-        console.error('Cal.com script not loaded properly');
-        document.getElementById('calendar-error').style.display = 'block';
-    }
-});
