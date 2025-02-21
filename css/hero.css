@@ -16,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2));
     z-index: 1;
 }
 
@@ -26,24 +26,28 @@
     text-align: center;
     padding: 6rem 0;
     color: white;
+    animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-text h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    letter-spacing: 0.1em;
+    font-size: 4.5rem;
+    letter-spacing: 0.05em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     color: white;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-out;
 }
 
 .hero-text p {
-    font-size: 1.5rem;
-    max-width: 600px;
+    font-size: 1.4rem;
+    max-width: 400px;
     margin: 0 auto;
     border-top: 2px solid var(--accent-gold);
-    padding-top: 1rem;
+    padding-top: 0.8rem;
     color: white;
+    letter-spacing: 0.03em;
+    animation: fadeIn 1.5s ease-out;
 }
 
 /* Mobile Responsive Hero */
@@ -58,14 +62,14 @@
     }
 
     .hero-text h1 {
-        font-size: 2.5rem;
-        letter-spacing: 0.05em;
+        font-size: 3rem;
+        letter-spacing: 0.03em;
     }
 
     .hero-text p {
         font-size: 1.2rem;
-        max-width: 100%;
-        padding: 1rem;
+        max-width: 300px;
+        padding: 0.6rem 1rem 0;
     }
 }
 
@@ -75,12 +79,12 @@
     }
 
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .hero-text p {
-        font-size: 1rem;
-        padding: 0.75rem;
+        font-size: 1.1rem;
+        max-width: 280px;
     }
 
     .cta-button {
@@ -110,4 +114,16 @@
   background: var(--accent-gold);
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(212, 175, 55, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
