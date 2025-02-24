@@ -10,6 +10,7 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     padding: 1rem;
+    contain: content;
 }
 
 .gallery-image {
@@ -22,6 +23,8 @@
     transition: all 0.3s ease;
     aspect-ratio: 3/4;
     height: auto;
+    contain: layout style paint;
+    will-change: transform;
 }
 
 .gallery-image img {
@@ -29,6 +32,9 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    contain: strict;
 }
 
 .gallery-image:hover {
@@ -90,6 +96,17 @@
     .gallery-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Optimized modal styles */
+.modal.fade .modal-dialog {
+    transform: translate(0, -50px);
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+}
+
+.modal.show .modal-dialog {
+    transform: none;
 }
 
 /* Testimonials */

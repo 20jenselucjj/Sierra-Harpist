@@ -1,7 +1,8 @@
 /* Footer Styling */
 .footer {
-  background: linear-gradient(45deg, var(--primary-brand) 0%, var(--deep-pink) 100%);
+  background: var(--soft-white);
   padding: 4rem 0 2rem;
+  border-top: 1px solid var(--light-pink);
   margin-top: 4rem;
   color: white;
 }
@@ -17,14 +18,18 @@
 }
 
 .social-icons {
+  display: flex;
+  gap: 1rem;
   margin-top: 1rem;
 }
 
 .social-icons a {
+  color: var(--text-dark);
   margin: 0 15px;
   font-size: 1.5rem;
   transition: all 0.3s ease;
   display: inline-block;
+  opacity: 0.8;
 }
 
 .social-icons i {
@@ -33,17 +38,19 @@
 }
 
 .social-icons a:hover {
-  color: var(--accent-gold);
-  transform: translateY(-3px);
+  color: var(--deep-pink);
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 .footer h5 {
-  color: var(--soft-white);
+  color: var(--primary-brand);
   position: relative;
   display: inline-block;
   margin-bottom: 1.5rem;
   font-family: 'Playfair Display', serif;
   letter-spacing: 0.05em;
+  font-weight: 600;
 }
 
 .footer h5::after {
@@ -56,18 +63,56 @@
   background: linear-gradient(90deg, var(--accent-gold), var(--primary-brand));
 }
 
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .footer-links li {
   margin-bottom: 0.5rem;
 }
 
 .footer-links a {
-  color: var(--soft-white);
+  color: var(--text-dark);
   text-decoration: none;
   transition: all 0.3s ease;
   position: relative;
   padding-left: 0;
+  padding: 0.3rem 0;
+  display: inline-block;
+  opacity: 0.8;
 }
 
 .footer-links a:hover {
   padding-left: 10px;
+  color: var(--deep-pink);
+  opacity: 1;
+}
+
+.footer p {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.footer i {
+  color: var(--primary-brand);
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 0 1.5rem;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .footer-links a {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+  }
 }

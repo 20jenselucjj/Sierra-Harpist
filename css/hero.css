@@ -1,12 +1,31 @@
 /* Hero Section Styling */
 .hero-section {
     position: relative;
-    background: url('../Portraitwithharp.png') center 70%/cover no-repeat;
+    background-color: var(--soft-white); /* Fallback */
     min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 2rem;
+    will-change: transform;
+    contain: layout style paint;
+    overflow: hidden;
+}
+
+.hero-section picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-section picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
 }
 
 .hero-section::before {
@@ -29,7 +48,7 @@
     animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-text h1 {
+.hero-heading {
     font-family: 'Playfair Display', serif;
     font-size: 4.5rem;
     letter-spacing: 0.05em;
@@ -61,7 +80,7 @@
         padding: 3rem 1rem;
     }
 
-    .hero-text h1 {
+    .hero-heading {
         font-size: 3rem;
         letter-spacing: 0.03em;
     }
@@ -78,7 +97,7 @@
         min-height: 60vh;
     }
 
-    .hero-text h1 {
+    .hero-heading {
         font-size: 2.5rem;
     }
 

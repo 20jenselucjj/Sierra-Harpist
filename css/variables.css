@@ -6,6 +6,14 @@
   --text-dark: #4A4A4A;        /* Softer text color */
   --light-pink: #F5D6D8;       /* Light pink for hover states */
   --pale-gold: #F0E6C3;        /* Pale gold for accents */
+
+  /* Form Colors */
+  --input-border: rgba(232, 180, 184, 0.5);
+  --input-bg: #ffffff;
+  --input-hover-border: var(--accent-gold);
+  --input-focus-border: var(--primary-brand);
+  --input-focus-shadow: rgba(74, 44, 109, 0.1);
+  --label-color: var(--primary-brand);
 }
 
 body {
